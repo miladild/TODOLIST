@@ -16,5 +16,7 @@ namespace TODOLIST.Models
 
         public DateTimeOffset? DueAt { get; set; }
 
+        public string UserId { get; set; }
+
     }
 }
