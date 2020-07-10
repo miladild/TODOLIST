@@ -34,17 +34,21 @@ namespace TODOLIST
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+
+            services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
+                //TODO: to user it once in the life cycle
+                InitializeDatabase(app);
+
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
@@ -69,6 +73,24 @@ namespace TODOLIST
                     pattern: "{controller=Todo}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+        }
+
+        private static void InitializeDatabase(IApplicationBuilder app)
+        {
+            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    SeedData.InitializeAsync(services).Wait();
+                }
+                catch (Exception ex)
+                {
+                    //var logger = services
+                    //.GetRequiredService<ILogger<Program>>();
+                    //logger.LogError(ex, "Error occurred seeding the DB.");
+                }
+            }
         }
     }
 }

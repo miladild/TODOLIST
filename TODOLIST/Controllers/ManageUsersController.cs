@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TODOLIST.ViewModels;
 
 namespace TODOLIST.Controllers
 {
@@ -16,9 +18,19 @@ namespace TODOLIST.Controllers
         {
             _userManager = userManager;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var admins = await _userManager.GetUsersInRoleAsync("Administrator");
+
+            var everyone = await _userManager.Users.ToListAsync();
+
+            var model = new ManageUsersViewModel
+            {
+                Administrators = admins,
+                Everyone = everyone
+            };
+
+            return View(model);
         }
     }
 }
