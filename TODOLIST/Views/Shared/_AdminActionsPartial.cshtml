@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TODOLIST.Models
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var currentUser = await UserManager.GetUserAsync(User);
+    var isAdmin = currentUser != null
+    && await UserManager.IsInRoleAsync(
+        currentUser,
+        Constants.AdministratorRole);
+    if (isAdmin)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="ManageUsers" asp-action="Index">Manage Users</a>
+        </li>
+    }
+}
+
+

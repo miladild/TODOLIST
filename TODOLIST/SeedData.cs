@@ -11,15 +11,7 @@ namespace TODOLIST
 {
     public class SeedData
     {
-        //public static async Task InitializeAsync(IServiceProvider services)
-        //{
-        //    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-        //    await EnsureRolesAsync(roleManager);
-        //    var userManager = services
-        //    .GetRequiredService<UserManager<IdentityUser>>(
-        //    );
-        //    await EnsureTestAdminAsync(userManager);
-        //}
+   
         public static async Task InitializeAsync(IServiceScope services)
         {
             var roleManager = services.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
