@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TODOLIST.Services;
+using Microsoft.Extensions.Logging;
 
 namespace TODOLIST
 {
@@ -35,7 +36,7 @@ namespace TODOLIST
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -47,7 +48,7 @@ namespace TODOLIST
             if (env.IsDevelopment())
             {
                 //TODO: to user it once in the life cycle
-                InitializeDatabase(app);
+                InitializeDatabaseAsync(app);
 
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
@@ -75,20 +76,21 @@ namespace TODOLIST
             });
         }
 
-        private static void InitializeDatabase(IApplicationBuilder app)
+
+        private static void InitializeDatabaseAsync(IApplicationBuilder app)
         {
             using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var services = scope.ServiceProvider;
                 try
                 {
-                    SeedData.InitializeAsync(services).Wait();
+                    SeedData.InitializeAsync(scope).Wait();
                 }
                 catch (Exception ex)
                 {
-                    //var logger = services
-                    //.GetRequiredService<ILogger<Program>>();
-                    //logger.LogError(ex, "Error occurred seeding the DB.");
+                    var logger = services
+                    .GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "Error occurred seeding the DB.");
                 }
             }
         }
