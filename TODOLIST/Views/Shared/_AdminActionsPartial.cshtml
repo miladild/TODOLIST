@@ -12,9 +12,11 @@
         Constants.AdministratorRole);
     if (isAdmin)
     {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="ManageUsers" asp-action="Index">Manage Users</a>
-        </li>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="ManageUsers" asp-action="Index">Manage Users</a>
+            </li>
+        </ul>
     }
 }
 
