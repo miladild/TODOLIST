@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TODOLIST", "TODOLIST\TODOLI
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5BFDCD65-3DA5-405D-A492-40494950A180}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{E46A4A4C-4F5A-4C9A-85EF-C8B9C29FBF84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTest", "IntegrationTest\IntegrationTest.csproj", "{90B4ED31-8C78-42AC-B096-F5EB8C5AA976}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,17 +25,17 @@ Global
 		{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E46A4A4C-4F5A-4C9A-85EF-C8B9C29FBF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E46A4A4C-4F5A-4C9A-85EF-C8B9C29FBF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E46A4A4C-4F5A-4C9A-85EF-C8B9C29FBF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E46A4A4C-4F5A-4C9A-85EF-C8B9C29FBF84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B4ED31-8C78-42AC-B096-F5EB8C5AA976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B4ED31-8C78-42AC-B096-F5EB8C5AA976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B4ED31-8C78-42AC-B096-F5EB8C5AA976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B4ED31-8C78-42AC-B096-F5EB8C5AA976}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71} = {5BFDCD65-3DA5-405D-A492-40494950A180}
-		{E46A4A4C-4F5A-4C9A-85EF-C8B9C29FBF84} = {5BFDCD65-3DA5-405D-A492-40494950A180}
+		{90B4ED31-8C78-42AC-B096-F5EB8C5AA976} = {5BFDCD65-3DA5-405D-A492-40494950A180}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3B34837-D530-4EEC-BF3D-C6BBFED8BFBE}
