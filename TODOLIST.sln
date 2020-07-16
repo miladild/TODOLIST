@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TODOLIST", "TODOLIST\TODOLIST.csproj", "{6D3896AD-678B-4D3B-ACE7-4873F5B8BF5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TODOLIST", "src\TODOLIST\TODOLIST.csproj", "{6D3896AD-678B-4D3B-ACE7-4873F5B8BF5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5BFDCD65-3DA5-405D-A492-40494950A180}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTest", "IntegrationTest\IntegrationTest.csproj", "{90B4ED31-8C78-42AC-B096-F5EB8C5AA976}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTest", "tests\IntegrationTest\IntegrationTest.csproj", "{90B4ED31-8C78-42AC-B096-F5EB8C5AA976}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{77254694-62B8-4B3C-9315-4A107AB51073}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{6D3896AD-678B-4D3B-ACE7-4873F5B8BF5E} = {77254694-62B8-4B3C-9315-4A107AB51073}
 		{83EE9025-6FE1-47B6-A3F2-D933CAEA4A71} = {5BFDCD65-3DA5-405D-A492-40494950A180}
 		{90B4ED31-8C78-42AC-B096-F5EB8C5AA976} = {5BFDCD65-3DA5-405D-A492-40494950A180}
 	EndGlobalSection

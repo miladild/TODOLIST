@@ -22,7 +22,7 @@ namespace IntegrationTest
             {
                 config.SetBasePath(Path.Combine(
                     Directory.GetCurrentDirectory(),
-                        "..\\..\\..\\..\\TODOLIST"));
+                        "..\\..\\..\\..\\..\\src\\TODOLIST"));
 
                 config.AddJsonFile("appsettings.json");
             });
